@@ -1,9 +1,8 @@
-# import pytest
-# from pyspark.sql import SparkSession
+import pytest
+
 import pyspark.sql.functions as F
 
 from src.main import add_one, SuperDataTransformer
-
 from tests.spark_base import spark
 
 
@@ -26,6 +25,7 @@ class TestMe:
     def test_add_one(self):
         assert add_one(3) == 4
 
+    @pytest.mark.is_spark
     def test_can_agg(self, spark):
         df = self.get_data(spark)
         trans = SuperDataTransformer()
@@ -37,12 +37,13 @@ class TestMe:
         assert out[0]['name'] == 'abc1'
         assert out[1]['sumval'] == 132
 
+    @pytest.mark.is_spark
     def test_can_do_other_agg(self, spark):
         df = self.get_data(spark)
         trans = SuperDataTransformer()
         df_agg = trans.do_the_other_agg(df)
 
-        # assert 'maxval' in df_agg.cols
+        assert 'maxval' in df_agg.columns
 
         out = df_agg.sort('name', 'maxval').collect()
 

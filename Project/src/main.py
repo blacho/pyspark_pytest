@@ -23,11 +23,6 @@ class SuperDataTransformer:
             )
         return df_agg
 
-def main():
-    pass
-
 
 if __name__ == "__main__":
-    
-    main()
     print(add_one(34))

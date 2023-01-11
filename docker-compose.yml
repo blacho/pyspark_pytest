@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  spark:
+    build:
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/app
+    command: tail -f /dev/null
