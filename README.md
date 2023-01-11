@@ -1,14 +1,22 @@
-# pyspark_docker_delete
-Running tests in pyspark test build
+# Pyspark Pytest
 
 
-docker build -t "test_pyspark" .
+Testing pyspark code with pytest
 
-Linux
-docker run -it -v $(pwd):/app test_pyspark bash
+/Link to blog post here/
 
-Win
-docker run -it -v ${pwd}:/app test_pyspark bash
+Build docker container
 
-cd /app/Project
-pytest -s tests/
+    docker build -t "test_pyspark" .
+
+Linux  
+
+    docker run -it -v $(pwd):/app test_pyspark bash
+
+Win  
+
+    docker run -it -v ${pwd}:/app test_pyspark bash
+
+Run tests (from inside container)
+
+    pytest -s tests/
