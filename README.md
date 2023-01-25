@@ -15,7 +15,7 @@ Linux
 
 Win  
 
-    docker run -it -v ${pwd}:/app test_pyspark bash
+    docker run -it -v %cd%:/app test_pyspark bash
 
 Run tests (from inside container)
 
