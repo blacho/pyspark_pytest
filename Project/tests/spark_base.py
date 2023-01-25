@@ -12,11 +12,11 @@ def get_spark():
 
     return spark
 
-@pytest.fixture()
-def spark():
-    # print("spark setup")
-    logger.info("spark setup")
-    spark_session = get_spark()
-    yield spark_session
-    logger.info("teardown")
-    # print("teardown")
+# @pytest.fixture()
+# def spark():
+#     # print("spark setup")
+#     logger.info("spark setup")
+#     spark_session = get_spark()
+#     yield spark_session
+#     logger.info("teardown")
+#     # print("teardown")
