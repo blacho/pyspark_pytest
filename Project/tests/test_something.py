@@ -3,7 +3,7 @@ import pytest
 import pyspark.sql.functions as F
 
 from src.main import add_one, SuperDataTransformer
-from tests.spark_base import spark
+# from tests.spark_base import spark
 
 
 class TestMe:
